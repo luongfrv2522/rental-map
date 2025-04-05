@@ -1,0 +1,61 @@
+📂 my-next-app
+ ├── 📂 app               # (Next.js 13+ với App Router)
+ │    ├── 📂 api          # API Routes (tương tự pages/api trong Page Router)
+ │    │    ├── route.ts   # API endpoint (GET, POST,...)
+ │    ├── 📂 (auth)       # Group Routes (định nghĩa layout cho nhóm trang)
+ │    │    ├── 📂 login
+ │    │    │    ├── page.tsx   # Trang đăng nhập
+ │    │    ├── 📂 register
+ │    │         ├── page.tsx   # Trang đăng ký
+ │    ├── 📂 dashboard    # Route chính (app/dashboard)
+ │    │    ├── page.tsx   # Trang dashboard
+ │    │    ├── layout.tsx # Layout cho dashboard (optional)
+ │    ├── 📂 settings     # Route settings
+ │    │    ├── page.tsx   # Trang cài đặt
+ │    ├── layout.tsx      # Layout chính (bắt buộc)
+ │    ├── page.tsx        # Trang chủ (/)
+ │    ├── loading.tsx     # Component loading
+ │    ├── error.tsx       # Xử lý lỗi cho toàn bộ app
+ ├── 📂 components        # Chứa các component tái sử dụng
+ │    ├── 📂 ui           # Component UI (Button, Card, Modal,...)
+ │    ├── 📂 layout       # Layout chung (Header, Footer, Sidebar,...)
+ │    ├── index.ts        # Export toàn bộ components
+ ├── 📂 lib               # Code logic (hàm helper, API fetch, auth, utils,...)
+ │    ├── auth.ts         # Xử lý authentication
+ │    ├── fetch.ts        # Hàm gọi API chung
+ ├── 📂 hooks             # Custom React Hooks
+ │    ├── useTheme.ts     # Hook cho theme (light/dark)
+ ├── 📂 styles            # CSS, Tailwind, hoặc Chakra UI Theme
+ │    ├── globals.css     # CSS toàn cục
+ │    ├── theme.ts        # Cấu hình theme của Chakra UI
+ ├── 📂 public            # Ảnh, favicon, fonts, v.v.
+ ├── 📂 middleware.ts     # Middleware (bảo vệ route, auth,...)
+ ├── next.config.js       # Cấu hình Next.js
+ ├── tsconfig.json        # Cấu hình TypeScript
+ ├── package.json         # Dependencies
+
+
+
+📂 my-next-app
+ ├── 📂 components
+ │    ├── 📂 ui           # Các UI component chung (Button, Card, Modal,...)
+ │    │    ├── Button.tsx
+ │    │    ├── Card.tsx
+ │    │    └── Modal.tsx
+ │    ├── 📂 layout       # Các layout component (Header, Footer, Sidebar,...)
+ │    │    ├── Header.tsx
+ │    │    ├── Footer.tsx
+ │    │    └── Sidebar.tsx
+ │    ├── 📂 sections     # Các phần lớn của trang (Hero, Features, Testimonial,...)
+ │    │    ├── Hero.tsx
+ │    │    ├── Features.tsx
+ │    │    └── Testimonial.tsx
+ │    ├── ThemeToggle.tsx # Component đổi theme (ví dụ: dark/light mode)
+ │    └── index.ts        # File tập hợp export cho toàn bộ components
+ ├── 📂 pages
+ ├── 📂 styles
+ ├── 📂 public
+ ├── 📂 app (nếu dùng Next.js 13+ với App Router)
+ ├── next.config.js
+ ├── tsconfig.json
+ └── package.json
