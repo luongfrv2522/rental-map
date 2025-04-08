@@ -1,4 +1,5 @@
 import React from "react";
+import {Box, Flex} from "@chakra-ui/react";
 
 type HeaderProps = {
   logo: React.ReactNode,
@@ -7,8 +8,14 @@ type HeaderProps = {
 export default function Header(props: HeaderProps)  {
   return (
     <header>
-      {props.logo}
-      {props.actions}
+      <Flex justify="space-between" align="center">
+        <Box>
+          {props.logo}
+        </Box>
+        <Flex >
+          {props.actions}
+        </Flex>
+      </Flex>
     </header>
   )
 }

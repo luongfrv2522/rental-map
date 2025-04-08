@@ -1,14 +1,16 @@
 "use client";
 import {Provider as ReduxProvider, useSelector} from "react-redux";
 import store, {RootState} from "@/store/store";
-import {ReactNode} from "react";
+import {ReactNode, useEffect} from "react";
 import {Box, Center, Show} from "@chakra-ui/react";
 import Loading from "@/components/loading";
 import {Toaster} from "@/components/ui/toaster"
+import {useSocket} from "@/hooks/useSocket";
 
 export default function PageProvider({ children }: { children: ReactNode }) {
   return (
     <ReduxProvider store={store}>
+      <AppContent/>
       <Toast/>
       <PageLoading>{children}</PageLoading>
     </ReduxProvider>
@@ -33,4 +35,15 @@ export function PageLoading({children}: { children: ReactNode }) {
 
 export const Toast = () => {
   return <Toaster/>
+}
+
+function AppContent() {
+  useSocket();
+
+  // Gọi API để khởi động socket server
+  useEffect(() => {
+    fetch("/api/socket");
+  }, []);
+
+  return null;
 }

@@ -5,6 +5,7 @@ import PageProvider from "@/app/page-provider";
 import Header from "@/components/layout/header";
 import {Container, HStack, Image} from "@chakra-ui/react";
 import {ColorModeButton} from "@/components/ui/color-mode";
+import Nav from "@/app/nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,14 +38,14 @@ export default function RootLayout({
               src="https://wallpapercave.com/uwp/uwp4261619.png"
               alt="Naruto vs Sasuke"
               aspectRatio={2}
-              width="200px"
+              width="150px"
             />
           }
           actions={
             <HStack>Đăng nhập | Đăng ký | <ColorModeButton/></HStack>
           }
         />
-        
+        <Nav />
         <main>
           <Container fluid={true}>
             {children}
