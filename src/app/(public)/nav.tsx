@@ -1,9 +1,10 @@
-import {Button, Flex, For} from "@chakra-ui/react";
+"use client";
+import {Button, Flex, For, Link} from "@chakra-ui/react";
 
 const navMenu = [
   {
     name: "Trang chủ",
-    url: "/home"
+    url: "/"
   },
   {
     name: "Phòng trọ",
@@ -28,7 +29,7 @@ export default function Nav(){
       <Flex justify="space-between" align="center" p={8}>
         <Flex gap={0}>
           <For each={navMenu}>
-            {({name, url}) => <Button variant="ghost" asChild key={name}><a href={url}>{name}</a></Button>}
+            {({name, url}) => <Button variant="ghost" asChild key={name}><Link href={url}>{name}</Link></Button>}
           </For>
         </Flex>
         <Flex gap={4}>

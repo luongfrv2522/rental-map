@@ -1,14 +1,16 @@
+"use client";
 import {useDispatch} from "react-redux";
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import {Toaster, toaster} from "@/components/ui/toaster";
 import {addNotification, NotifyStateItem} from "@/store/notifySlice";
 import {getSocket} from "@/lib/socket";
 
 export const Notify = () => {
+  const hasDisconnected = useRef(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let socket = getSocket();
+    const socket = getSocket();
     socket.on("notify", (data: NotifyStateItem) => {
       dispatch(addNotification(data));
     });
@@ -18,18 +20,21 @@ export const Notify = () => {
   useEffect(() => {
     fetch("/api/socket");
 
-    let socket = getSocket();
+    const socket = getSocket();
     if (!socket.connected) {
       socket.connect();
     }
     socket.on("connect", () => {
       console.log("✅ Connected:", socket.id);
-      toaster.success({ title: 'Connected'});
+      if (hasDisconnected.current) {
+        toaster.success({ title: "Reconnected" });
+      }
     });
 
     socket.on("disconnect", () => {
       console.log("❌ Disconnected:");
       toaster.error({ title: 'Disconnected'});
+      hasDisconnected.current = true;
     });
   }, []);
 
