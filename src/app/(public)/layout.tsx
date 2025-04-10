@@ -7,7 +7,7 @@ import {ColorModeButton} from "@/components/ui/color-mode";
 import Nav from "@/app/(public)/nav";
 
 export const metadata: Metadata = {
-  title: process.env.NEXT_PUBLIC_APP_NAME,
+  title: "Home",
   description: process.env.NEXT_PUBLIC_APP_NAME,
 };
 
