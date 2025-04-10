@@ -18,6 +18,8 @@ export default function handler(
   if (!res.socket.server.io) {
     const io = new IOServer(res.socket.server, {
       path: "/ws",
+      pingInterval: 10000,   // mỗi 10s gửi ping
+      pingTimeout: 5000,     // nếu không nhận pong sau 5s thì xem như mất kết nối
     });
 
     res.socket.server.io = io;
@@ -33,7 +35,6 @@ export default function handler(
         console.log("❌ Client disconnected:", socket.id);
       });
     });
-
     console.log("🟢 Socket.IO server initialized");
   }
 

@@ -3,7 +3,7 @@ import {Button, Flex, For} from "@chakra-ui/react";
 const navMenu = [
   {
     name: "Trang chủ",
-    url: "/"
+    url: "/home"
   },
   {
     name: "Phòng trọ",

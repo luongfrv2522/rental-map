@@ -30,7 +30,7 @@ export default function Home() {
         </For>
       </HStack>
 
-      <VStack spacing={2}>
+      <VStack>
         {notifies.map((n, i) => (
           <Box key={i} borderWidth="1px" p={3} rounded="md">
             <Text fontWeight="bold">{n.title}</Text>
