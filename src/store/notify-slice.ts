@@ -1,4 +1,4 @@
-// redux/notifySlice.ts
+// redux/notify-slice.ts
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export interface NotifyState {

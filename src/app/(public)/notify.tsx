@@ -2,7 +2,7 @@
 import {useDispatch} from "react-redux";
 import {useEffect, useRef} from "react";
 import {Toaster, toaster} from "@/components/ui/toaster";
-import {addNotification, NotifyStateItem} from "@/store/notifySlice";
+import {addNotification, NotifyStateItem} from "@/store/notify-slice";
 import {getSocket} from "@/lib/socket";
 
 export const Notify = () => {

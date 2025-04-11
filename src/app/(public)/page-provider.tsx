@@ -1,6 +1,6 @@
 "use client";
 import {Provider as ReduxProvider, useSelector} from "react-redux";
-import store, {RootState} from "@/store/store";
+import publicStore, {RootState} from "@/store/public/public-store";
 import {ReactNode} from "react";
 import {Box, Center, Show} from "@chakra-ui/react";
 import Loading from "@/components/loading";
@@ -8,7 +8,7 @@ import {Notify} from "@/app/(public)/notify";
 
 export default function PageProvider({ children }: { children: ReactNode }) {
   return (
-    <ReduxProvider store={store}>
+    <ReduxProvider store={publicStore}>
       <Notify/>
       <PageLoading/>
       {children}
