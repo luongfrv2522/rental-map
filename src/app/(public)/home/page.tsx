@@ -1,33 +1,14 @@
-"use client";
-import {Button, For, HStack} from "@chakra-ui/react";
 import React from "react";
-import {toaster} from "@/components/ui/toaster";
+import type {Metadata} from "next";
+import HomePage from "@/app/(public)/home/home-page";
 
+export const metadata: Metadata = {
+  title: "Home",
+  description: process.env.NEXT_PUBLIC_APP_NAME,
+};
 
 export default function Home() {
-  
   return (
-    <>
-      <HStack minH="100vh">
-        <For each={["success", "error", "warning", "info"]}>
-          {(type) => (
-            <Button
-              size="sm"
-              variant="outline"
-              key={type}
-              onClick={() =>
-                toaster.create({
-                  title: `Toast status is ${type}`,
-                  type: type,
-                })
-              }
-            >
-              {type}
-            </Button>
-          )}
-        </For>
-      </HStack>
-      
-    </>
+    <HomePage/>
   );
 }
